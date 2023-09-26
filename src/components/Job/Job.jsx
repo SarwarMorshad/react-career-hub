@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
+import { CiLocationOn } from "react-icons/ci";
+import { HiOutlineCurrencyDollar } from "react-icons/hi";
 
 const Job = ({ job }) => {
   const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
-      <figure>
+      <figure className="w-[147px] h-[40px]">
         <img src={logo} alt="Shoes" />
       </figure>
       <div className="card-body">
@@ -18,8 +20,18 @@ const Job = ({ job }) => {
             {job_type}
           </button>
         </div>
+        <div className="flex justify-between">
+          <h2 className="flex justify-start items-center">
+            <CiLocationOn className="text-2xl"></CiLocationOn>
+            {location}
+          </h2>
+          <h2 className="flex justify-end items-center">
+            <HiOutlineCurrencyDollar className="text-2xl"></HiOutlineCurrencyDollar>
+            {salary}
+          </h2>
+        </div>
         <div className="card-actions justify-start">
-          <button className="btn btn-primary">View Details</button>
+          <button className="btn bg-[#9873FF] text-white">View Details</button>
         </div>
       </div>
     </div>
